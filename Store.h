@@ -8,28 +8,24 @@
 #include <fstream>
 #include <cmath>
 using namespace std;
-#include "Companion.h"
-#include "Player.h"
+#include "Materials.h"
 
-#ifndef PLAYER_H
-#define PLAYER_H
+
+#ifndef STORE_H
+#define STORE_H
 
 class Store
 {
     public:
     Store();
-    void addPlayer(string username);
-    double buyOxen(int oxenAmount);
-    double buyFood(double foodAmount);
-    double buyBullets(int bulletsAmount);
-    double buyWagonParts(int wagonPartsAmount);
-    double buyMedKits(int medKitsAmount);
+    void shop(Materials &);
+    void setTotal(double bill_);
+    double getTotal();
+
     
     private:
     double priceMultiplier;
     double bill;
-    Player P;
-    
     
     
 };
