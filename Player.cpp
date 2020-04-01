@@ -1,3 +1,9 @@
+// CS1300 Spring 2020
+// Author: Wesley Toy
+// Recitation: 301 – Telly 
+// Project 3 - Player Functions
+
+
 #include "Player.h"
 #include <iostream>
 #include <string>
@@ -6,17 +12,7 @@ using namespace std;
 Player::Player()
 {
     name = "";
-    food = 0;
-    money = 1200;
-    wagonParts = 0;
-    bullets = 0;
-    medKits = 0;
-    
-    for(int i = 0; i < 4; i++)
-    {
-        C[i].setCompanion("");
-    }
-    
+    death = false;
 }
 
 void Player::setPlayerName(string name_)
@@ -24,76 +20,18 @@ void Player::setPlayerName(string name_)
     name = name_;
 }
 
-void Player::setFood(double amount)
+string Player::getPlayerName()
 {
-    food = food + amount;
+    return name;
 }
 
-void Player::setMoney(double moneyAmount)
+void Player::dead()
 {
-    money = money + moneyAmount;
+    death = true;
 }
 
-double Player::getMoney()
+bool Player::getDead()
 {
-    return money;
+    return death;
 }
-
-
-void Player::addCompanion(string name_, int index)
-{
-    C[index].setCompanion(name_);
-}
-
-string Player::getCompanion(int index)
-{
-    return C[index].getCompanionName();
-}
-
-
-int Player::getFoodAmount()
-{
-    return food;
-}
-
-void Player::setWagonParts(int amount_)
-{
-    wagonParts = wagonParts + amount_;
-}
-
-int Player::getWagonParts()
-{
-    return wagonParts;
-}
-
-void Player::setOxen(int yokes_)
-{
-    oxen = oxen + yokes_;
-}
-
-int Player::getOxen()
-{
-    return oxen;
-}
-
-void Player::setBullets(int amount_)
-{
-    bullets = bullets + amount_;
-}
-
-int Player::getBullets()
-{
-    return bullets;
-}
-
-void Player::setMedical(int amount_)
-{
-    medKits = medKits + amount_;
-}
-
-int Player::getMedical()
-{
-    return medKits;
-}
-
 
